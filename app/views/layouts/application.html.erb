@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CasoOfertaLaboral</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <ul  class="horizontal">
+       <li><%=link_to "inicio", ofertas_path %></li>
+       <li><%=link_to "empresa", empresas_path %></li>
+        <li><%=link_to "postulante", postulantes_path %></li>
+      </ul>
+    </div>
+
+    <%= yield %>
+  </body>
+</html>

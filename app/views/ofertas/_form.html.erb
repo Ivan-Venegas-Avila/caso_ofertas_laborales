@@ -1,0 +1,57 @@
+<%= form_with(model: oferta) do |form| %>
+  <% if oferta.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(oferta.errors.count, "error") %> prohibited this oferta from being saved:</h2>
+
+      <ul>
+        <% oferta.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :puesto %>
+    <%= form.text_area :puesto %>
+  </div>
+
+  <div class="field">
+    <%= form.label :descripcion %>
+    <%= form.text_area :descripcion %>
+  </div>
+
+  <div class="field">
+    <%= form.label :vacantes %>
+    <%= form.number_field :vacantes %>
+  </div>
+
+  <div class="field">
+    <%= form.label :rango_salarial %>
+    <%= form.number_field :rango_salarial %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fecha_inicio %>
+    <%= form.date_select :fecha_inicio %>
+  </div>
+
+  <div class="field">
+    <%= form.label :modalidad %>
+    <%= form.text_field :modalidad %>
+  </div>
+
+  <div class="field">
+    <%= form.label :region %>
+    <%= form.text_field :region %>
+  </div>
+
+  <div class="field">
+    <%= form.label :empresa_id %>
+    <%= form.text_field :empresa_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Puesto:</strong>
+  <%= @oferta.puesto %>
+</p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @oferta.descripcion %>
+</p>
+
+<p>
+  <strong>Vacantes:</strong>
+  <%= @oferta.vacantes %>
+</p>
+
+<p>
+  <strong>Rango salarial:</strong>
+  <%= @oferta.rango_salarial %>
+</p>
+
+<p>
+  <strong>Fecha inicio:</strong>
+  <%= @oferta.fecha_inicio %>
+</p>
+
+<p>
+  <strong>Modalidad:</strong>
+  <%= @oferta.modalidad %>
+</p>
+
+<p>
+  <strong>Region:</strong>
+  <%= @oferta.region %>
+</p>
+
+<p>
+  <strong>Empresa:</strong>
+  <%= @oferta.empresa_id %>
+</p>
+
+<%= link_to 'Edit', edit_oferta_path(@oferta) %> |
+<%= link_to 'Back', ofertas_path %>

@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Rut:</strong>
+  <%= @postulante.rut %>
+</p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @postulante.nombre %>
+</p>
+
+<p>
+  <strong>Fecha nacimiento:</strong>
+  <%= @postulante.fecha_nacimiento %>
+</p>
+
+<p>
+  <strong>Genero:</strong>
+  <%= @postulante.genero %>
+</p>
+
+<p>
+  <strong>Telefono:</strong>
+  <%= @postulante.telefono %>
+</p>
+
+<p>
+  <strong>Curriculum:</strong>
+  <%= @postulante.curriculum %>
+</p>
+
+<%= link_to 'Edit', edit_postulante_path(@postulante) %> |
+<%= link_to 'Back', postulantes_path %>

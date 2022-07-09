@@ -1,0 +1,32 @@
+<%= form_with(model: postulacion) do |form| %>
+  <% if postulacion.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(postulacion.errors.count, "error") %> prohibited this postulacion from being saved:</h2>
+
+      <ul>
+        <% postulacion.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :postulante_id %>
+    <%= form.text_field :postulante_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :empresa_id %>
+    <%= form.text_field :empresa_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :oferta_id %>
+    <%= form.text_field :oferta_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

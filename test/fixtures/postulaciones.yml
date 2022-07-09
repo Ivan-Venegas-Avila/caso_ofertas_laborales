@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  postulante: one
+  empresa: one
+  oferta: one
+
+two:
+  postulante: two
+  empresa: two
+  oferta: two

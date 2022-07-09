@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Postulante:</strong>
+  <%= @postulacion.postulante_id %>
+</p>
+
+<p>
+  <strong>Empresa:</strong>
+  <%= @postulacion.empresa_id %>
+</p>
+
+<p>
+  <strong>Oferta:</strong>
+  <%= @postulacion.oferta_id %>
+</p>
+
+<%= link_to 'Edit', edit_postulacion_path(@postulacion) %> |
+<%= link_to 'Back', postulaciones_path %>
