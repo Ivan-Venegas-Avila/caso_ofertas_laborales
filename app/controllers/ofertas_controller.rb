@@ -3,7 +3,7 @@ class OfertasController < ApplicationController
 
   # GET /ofertas or /ofertas.json
   def index
-    @ofertas = Oferta.all
+    @ofertas = Oferta.order(:fecha_inicio).page(params[:page])
   end
 
   # GET /ofertas/1 or /ofertas/1.json

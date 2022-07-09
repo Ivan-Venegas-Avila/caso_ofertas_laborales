@@ -10,29 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_09_013848) do
+ActiveRecord::Schema.define(version: 2022_07_09_035131) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "empresas", force: :cascade do |t|
-    t.integer "rut"
-    t.text "razon_social"
-    t.text "representante_legal"
-    t.text "direccion"
-    t.integer "telefono"
+    t.integer "rut", null: false
+    t.text "razon_social", null: false
+    t.text "representante_legal", null: false
+    t.text "direccion", null: false
+    t.integer "telefono", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.index ["email"], name: "index_empresas_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_empresas_on_reset_password_token", unique: true
   end
 
   create_table "ofertas", force: :cascade do |t|
-    t.text "puesto"
-    t.text "descripcion"
+    t.text "puesto", null: false
+    t.text "descripcion", null: false
     t.integer "vacantes"
     t.integer "rango_salarial"
-    t.date "fecha_inicio"
-    t.string "modalidad"
-    t.string "region"
+    t.date "fecha_inicio", null: false
+    t.string "modalidad", null: false
+    t.string "region", null: false
     t.bigint "empresa_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -51,14 +58,21 @@ ActiveRecord::Schema.define(version: 2022_07_09_013848) do
   end
 
   create_table "postulantes", force: :cascade do |t|
-    t.integer "rut"
-    t.string "nombre"
-    t.date "fecha_nacimiento"
-    t.string "genero"
-    t.integer "telefono"
-    t.text "curriculum"
+    t.integer "rut", null: false
+    t.string "nombre", null: false
+    t.date "fecha_nacimiento", null: false
+    t.string "genero", null: false
+    t.integer "telefono", null: false
+    t.text "curriculum", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.index ["email"], name: "index_postulantes_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_postulantes_on_reset_password_token", unique: true
   end
 
   add_foreign_key "ofertas", "empresas"

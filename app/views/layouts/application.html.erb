@@ -11,13 +11,16 @@
   </head>
 
   <body>
-    <div class="container-fluid">
-      <ul  class="horizontal">
-       <li><%=link_to "inicio", ofertas_path %></li>
-       <li><%=link_to "empresa", empresas_path %></li>
-        <li><%=link_to "postulante", postulantes_path %></li>
-      </ul>
-    </div>
+
+    <%if notice%>
+      <p class="alert alert-primary"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
+
+    <%= render "partials/nav" %>
+
 
     <%= yield %>
   </body>

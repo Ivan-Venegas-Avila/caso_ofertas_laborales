@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :postulantes
+  devise_for :empresas
   resources :postulaciones
   resources :ofertas
   resources :postulantes

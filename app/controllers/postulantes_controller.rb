@@ -60,11 +60,11 @@ class PostulantesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_postulante
-      @postulante = Postulante.find(params[:id])
+      @postulante = Postulante.find(params[:user_id])
     end
 
     # Only allow a list of trusted parameters through.
     def postulante_params
-      params.require(:postulante).permit(:rut, :nombre, :fecha_nacimiento, :genero, :telefono, :curriculum)
+      params.require(:postulante).permit(:rut, :nombre, :fecha_nacimiento, :genero, :telefono, :curriculum, :email, :password)
     end
 end
